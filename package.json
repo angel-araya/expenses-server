@@ -1,0 +1,19 @@
+{
+  "name": "expenses-server",
+  "version": "0.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+
+  },
+  "author": "Angel Araya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-basic-auth": "^1.1.1",
+    "pg": "^6.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.2.1"
+  }
+}
