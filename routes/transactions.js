@@ -1,5 +1,3 @@
-
-
 const router = require('express').Router()
 const db = require('./../db/db.js')
 
@@ -14,8 +12,9 @@ router.post('/insert', async (req, res) => {
     res.json({
       inserted: t.dataValues
     })
-  } catch (e) { //TODO: Error handling
-    res.json({ status: 'NOT OK'}).status(500)
+  } catch (e) {
+    //TODO: Error handling
+    res.json({ status: 'NOT OK' }).status(500)
   }
 })
 
@@ -31,22 +30,25 @@ router.get('/all', async (req, res) => {
 
 router.get('/inrange', async (req, res) => {
   if (!req.query.from || !req.query.to) {
-    res.status(400).json({error: 'Invalid query parameters'})
+    res.status(400).json({ error: 'Invalid query parameters' })
   }
   try {
-    ts = await db.retrieveRange(new Date(req.query.from), new Date(req.query.to))
+    ts = await db.retrieveRange(
+      new Date(req.query.from),
+      new Date(req.query.to)
+    )
     res.json(ts)
   } catch (e) {
     res.status(500).end()
   }
-
 })
 
 router.delete('/reset', async (req, res) => {
   try {
     await db.resetDB()
     res.json({ status: 'OK' })
-  } catch (e) { //TODO: Error handling
+  } catch (e) {
+    //TODO: Error handling
     res.status(500).end()
   }
 })
