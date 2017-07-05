@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize')
-const path = require('path')
 const sequelizeConnection = new Sequelize('node', 'node', 'node', {
   host: 'localhost',
   dialect: 'postgres',
@@ -17,5 +16,7 @@ const db = {
 
 db.Transaction = db.sequelize.import('./models/transactions.js')
 db.Account = db.sequelize.import('./models/accounts.js')
+
+db.sync()
 
 module.exports = db

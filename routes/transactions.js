@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const db = require('./../db/db.js')
+const db = require('./../db/index.js')
 
 router.post('/insert', async (req, res) => {
   // TODO: validate the query
