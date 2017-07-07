@@ -17,6 +17,10 @@ const db = {
 db.Transaction = db.sequelize.import('./models/transactions.js')
 db.Account = db.sequelize.import('./models/accounts.js')
 
+<<<<<<< HEAD:db/index.js
 db.sequelize.sync()
+=======
+db.sync()
+>>>>>>> dd859c47b49be16a46f11cf945d1a8ba4c302feb:db/index.js
 
 module.exports = db
